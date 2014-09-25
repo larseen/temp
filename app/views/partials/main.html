@@ -8,10 +8,7 @@
             <img src="{{article.source.images[0].small}}" width="180"/>
           </div>
         </a>
-        <div class="media-body">
-          <h4 class="media-heading">{{article.content[0].content}}</h4>
-          {{article.content[1].content}}{{article.content[2].content}}
-        </div>
+        <div class="media-body" ng-bind-html="article.content | preview"></div>
       </div>
   </div>
 </div>
