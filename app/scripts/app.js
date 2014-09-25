@@ -4,7 +4,8 @@ angular.module('vioApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'vioFilters'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
@@ -20,7 +21,7 @@ angular.module('vioApp', [
         templateUrl: 'partials/signup',
         controller: 'SignupCtrl'
       })
-      .when('/settings', {
+      .when('/settings/:articleId', {
         templateUrl: 'partials/settings',
         controller: 'SettingsCtrl',
         authenticate: true

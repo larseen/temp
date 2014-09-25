@@ -2,7 +2,6 @@
 
 <div class="row marketing">
   <div ng-repeat="element in article.content">
-      <div ng-if="element.type=='img'"><img src="{{article.source.images[element.content].medium}}" /></div>
-      <div ng-bind-html="element.content"></div>
+     <div ng-bind-html="element | markup:article"></div>
   </div>
 </div>

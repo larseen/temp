@@ -4,6 +4,33 @@ body {
   padding-bottom: 20px;
 }
 
+/* 
+First line flush left
+Subsequently 1em indent, ragged right, ½ lead boundary
+*/
+
+.crop {
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.crop img {
+    width: 400px;
+    height: 300px;
+    margin: -75px 0 0 -100px;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.25em;
+  margin: 0.625em;
+  text-align: left;
+}
+p + p {
+  text-indent: 1em;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
