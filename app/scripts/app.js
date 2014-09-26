@@ -28,7 +28,7 @@ angular.module('vioApp', [
         authenticate: true
       })
       .when('/user', {
-        templateUrl: 'views/user.html',
+        templateUrl: 'partials/user',
         controller: 'UserCtrl',
         authenticate: true
       })
