@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('vioApp')
-  .controller('SignupCtrl', function ($scope, Auth, $location) {
+  .controller('SignupCtrl', function ($scope, Auth, $location, $rootScope) {
     $scope.user = {};
     $scope.errors = {};
+
+    $rootScope.location = $location.path().substr(1,$location.path().length);
 
     $scope.register = function(form) {
       $scope.submitted = true;

@@ -11,7 +11,8 @@ angular.module('vioApp', [
     $routeProvider
       .when('/', {
         templateUrl: 'partials/main',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        authenticate: true
       })
       .when('/login', {
         templateUrl: 'partials/login',
@@ -26,13 +27,18 @@ angular.module('vioApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/user', {
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl',
+        authenticate: true
+      })
       .otherwise({
         redirectTo: '/'
       });
       
     $locationProvider.html5Mode(true);
       
-  /*  // Intercept 401s and redirect you to login
+    // Intercept 401s and redirect you to login
     $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
       return {
         'responseError': function(response) {
@@ -55,5 +61,5 @@ angular.module('vioApp', [
       if (next.authenticate && !Auth.isLoggedIn()) {
         $location.path('/login');
       }
-    });*/
+    });
   });

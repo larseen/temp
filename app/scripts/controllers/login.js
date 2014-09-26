@@ -1,9 +1,11 @@
 'use strict';
 
 angular.module('vioApp')
-  .controller('LoginCtrl', function ($scope, Auth, $location) {
+  .controller('LoginCtrl', function ($scope, Auth, $location, $rootScope) {
     $scope.user = {};
     $scope.errors = {};
+
+    $rootScope.location = $location.path().substr(1,$location.path().length);
 
     $scope.login = function(form) {
       $scope.submitted = true;
